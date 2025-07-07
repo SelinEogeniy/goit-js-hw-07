@@ -9,15 +9,16 @@ const onFormSubmit = event => {
   const formData = {
     email: refs.form.elements.email.value.trim(),
     password: refs.form.elements.password.value.trim(),
-  }
+  };
 
   if (Object.values(formData).includes('')) {
-    alert ('All form fields must be filled in');
+    alert('All form fields must be filled in');
     return;
   }
 
   console.log(formData);
-}
+  
+  refs.form.reset();
+};
 
 refs.form.addEventListener('submit', onFormSubmit);
-  
